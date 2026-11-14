@@ -1,26 +1,38 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head> <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-  const SUPABASE_URL = "https://dwktxozijdycemdnywet.supabase.co";
-  const SUPABASE_KEY = "sb_publishable_fzbRN26oknBzdoH2e9haNg_Gp9IFLU1";
-  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-</script>
+<html lang="ar">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مكتبة الياسري</title>
+<title>مكتبة الياسري الإلكترونية الرقمية</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://dwktxozijdycemdnywet.supabase.co";
+const SUPABASE_KEY = "sb_publishable_fzbRN26oknBzdoH2e9haNg_Gp9IFLU1";
+const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+</script>
 <style>
-body{font-family:Tahoma;background:#f7f3e8;color:#2c2416;margin:0}
-header{background:#1f3b2c;color:#f7f3e8;padding:20px;text-align:center}
-main{padding:20px}
-.card{background:#fff;border:1px solid #d8c9a3;border-radius:10px;padding:15px;margin-bottom:10px}
-.read-btn{display:inline-block;background:#1f3b2c;color:#fff;padding:8px 14px;border-radius:6px;text-decoration:none}
-footer{background:#1f3b2c;color:#f7f3e8;text-align:center;padding:15px}
+body{font-family:Arial,sans-serif;background:#f5f1e8;margin:0;padding:0}
+header{background:#14532d;color:#fff;text-align:center;padding:25px}
+h1{margin:0;font-size:26px}
+main{padding:20px;max-width:1000px;margin:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
+.card{background:#fff;border:1px solid #d6cbb2;border-radius:10px;padding:15px;box-shadow:0 2px 5px rgba(0,0,0,.08)}
+.card h3{color:#14532d;margin:0 0 8px}
+.card p{color:#444;font-size:14px;margin:0 0 10px}
+.card a{display:inline-block;background:#14532d;color:#fff;padding:8px 14px;border-radius:6px;text-decoration:none;font-size:14px}
+footer{background:#14532d;color:#fff;text-align:center;padding:20px;margin-top:30px}
 </style>
 </head>
 <body>
-<header><h1>مكتبة الياسري الإلكترونية الرقمية</h1></header>
-<main><div id="books"></div></main> <div class="card"><h3>الحدائق للاندلسي</h3><p>كتاب في العلوم الشيعية</p><a href="#">قراءة</a></div>
+
+<header>
+<h1>مكتبة الياسري الإلكترونية الرقمية</h1>
+<p>كتب العلوم الشيعية بالعربية والإنجليزية</p>
+</header>
+
+<main>
+<div class="cards">
+
 <div class="card"><h3>نهج البلاغة</h3><p>مجموعة خطب وأقوال الإمام علي عليه السلام</p><a href="#">قراءة</a></div>
 <div class="card"><h3>الكافي</h3><p>من كتب الحديث الشيعي</p><a href="#">قراءة</a></div>
 <div class="card"><h3>من لا يحضره الفقيه</h3><p>كتاب في الفقه والحديث</p><a href="#">قراءة</a></div>
@@ -29,22 +41,29 @@ footer{background:#1f3b2c;color:#f7f3e8;text-align:center;padding:15px}
 <div class="card"><h3>وسائل الشيعة</h3><p>موسوعة في الحديث والفقه</p><a href="#">قراءة</a></div>
 <div class="card"><h3>بحار الأنوار</h3><p>موسوعة في العلوم الإسلامية</p><a href="#">قراءة</a></div>
 <div class="card"><h3>مفاتيح الجنان</h3><p>كتاب في الأدعية والأوراد</p><a href="#">قراءة</a></div>
-<div class="card"><h3>الصحيفة السجادية</h3><p>أدعية الإمام زين العابدين عليه السلام</p><a href="#">قراءة</a></div> </div>
-<footer><p>البصرة - العراق | واتساب: 07705677595 | ss65ri@gmail.com</p></footer>
-<script>
-const books=[
-{t:"نهج البلاغة",a:"الإمام علي (ع)",u:"https://www.imamkadhim.com/?s=نهج+البلاغة"},
-{t:"تحف العقول",a:"ابن شعبة الحراني",u:"https://www.imamkadhim.com/?s=تحف+العقول"},
-{t:"كشف المراد",a:"العلامة الحلي",u:"https://www.imamkadhim.com/?s=كشف+المراد"},
-{t:"المنطق",a:"مرتضى مطهري",u:"https://www.imamkadhim.com/?s=المنطق"},
-{t:"الحكمة العملية",a:"مرتضى مطهري",u:"https://www.imamkadhim.com/?s=الحكمة+العملية"},
-{t:"آلاء الرحمن",a:"الرواندي",u:"https://www.imamkadhim.com/?s=آلاء+الرحمن"},
-{t:"مهذب الأحكام",a:"السبزواري",u:"https://www.imamkadhim.com/?s=مهذب+الأحكام"},
-{t:"مجمع البحرين",a:"الرضوي الحائري",u:"https://www.imamkadhim.com/?s=مجمع+البحرين"},
-{t:"مكتبة الشيعة",a:"مؤسسة الميلاني",u:"https://shiaonlinelibrary.com/"},
-{t:"مكتبة أهل البيت",a:"مؤسسة آل البيت",u:"https://www.ablibrary.net/"}
-];
-document.getElementById("books").innerHTML=books.map(b=>`<div class="card"><h3>${b.t}</h3><p>${b.a}</p><a class="read-btn" href="${b.u}" target="_blank">قراءة</a></div>`).join("");
-</script>
+<div class="card"><h3>الصحيفة السجادية</h3><p>أدعية الإمام زين العابدين عليه السلام</p><a href="#">قراءة</a></div>
+<div class="card"><h3>الحدائق للاندلسي</h3><p>كتاب في العلوم الشيعية</p><a href="#">قراءة</a></div>
+
+<div class="card"><h3>كتاب 11</h3><p>وصف الكتاب</p><a href="#">قراءة</a></div>
+<div class="card"><h3>كتاب 12</h3><p>وصف الكتاب</p><a href="#">قراءة</a></div>
+<div class="card"><h3>كتاب 13</h3><p>وصف الكتاب</p><a href="#">قراءة</a></div>
+<div class="card"><h3>كتاب 14</h3><p>وصف الكتاب</p><a href="#">قراءة</a></div>
+<div class="card"><h3>كتاب 15</h3><p>وصف الكتاب</p><a href="#">قراءة</a></div>
+<div class="card"><h3>كتاب 16</h3><p>وصف الكتاب</p><a href="#">قراءة</a></div>
+<div class="card"><h3>كتاب 17</h3><p>وصف الكتاب</p><a href="#">قراءة</a></div>
+<div class="card"><h3>كتاب 18</h3><p>وصف الكتاب</p><a href="#">قراءة</a></div>
+<div class="card"><h3>كتاب 19</h3><p>وصف الكتاب</p><a href="#">قراءة</a></div>
+<div class="card"><h3>كتاب 20</h3><p>وصف الكتاب</p><a href="#">قراءة</a></div>
+
+</div>
+</main>
+
+<footer>
+<p>مكتبة الياسري الإلكترونية الرقمية</p>
+<p>البصرة - العراق</p>
+<p>الهاتف / واتساب: 07705677595</p>
+<p>البريد الإلكتروني: ss65ri@gmail.com</p>
+</footer>
+
 </body>
 </html>
