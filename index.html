@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مكتبة الياسري الإلكترونية الرقمية</title>
+<style>
+body { font-family: Tahoma, Arial; background:#f7f3e8; color:#2c2416; margin:0; }
+header { background:#1f3b2c; color:#f7f3e8; padding:20px; text-align:center; }
+nav { background:#8a6d3b; padding:10px; text-align:center; }
+nav button { background:#f7f3e8; border:none; padding:8px 14px; margin:4px; border-radius:6px; font-weight:bold; cursor:pointer; }
+main { padding:20px; }
+.books { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:15px; }
+.card { background:#fff; border:1px solid #d8c9a3; border-radius:10px; padding:15px; }
+.card h3 { margin:0 0 8px; color:#1f3b2c; }
+.category { display:inline-block; background:#e8dfc7; padding:3px 8px; border-radius:6px; font-size:12px; margin-bottom:10px; }
+.read-btn { display:inline-block; background:#1f3b2c; color:#fff; padding:8px 14px; border-radius:6px; text-decoration:none; }
+footer { background:#1f3b2c; color:#f7f3e8; text-align:center; padding:15px; margin-top:30px; }
+</style>
+</head>
+<body>
 
+<header>
+<h1>مكتبة الياسري الإلكترونية الرقمية</h1>
+<p>كتب العلوم الشيعية للقراءة والتحميل</p>
+</header>
+
+<nav>
+<button onclick="setLang('ar')">العربية</button>
+<button onclick="setLang('en')">English</button>
+</nav>
+
+<main>
+<h2 id="sectionTitle">الكتب العربية</h2>
+<div class="books" id="books-grid"></div>
+</main>
+
+<footer>
+<p>البصرة - العراق</p>
+<p>الهاتف / واتساب: 07705677595</p>
+<p>البريد الإلكتروني: ss65ri@gmail.com</p>
+</footer>
+
+<script>
+const arabicBooks = [
+{ title:"نهج البلاغة", author:"الإمام علي بن أبي طالب (ع)", category:"الحديث والرواية", read:"https://www.imamkadhim.com/?s=نهج+البلاغة" },
+{ title:"تحف العقول عن آل الرسول (ص)", author:"ابن شعبة الحراني", category:"الحديث والرواية", read:"https://www.imamkadhim.com/?s=تحف+العقول" },
+{ title:"كشف المراد في شرح تجريد الاعتقاد", author:"العلامة الحلي", category:"العقائد", read:"https://www.imamkadhim.com/?s=كشف+المراد" },
+{ title:"المنطق", author:"الشهيد مرتضى مطهري", category:"المنطق والفلسفة", read:"https://www.imamkadhim.com/?s=المنطق" },
+{ title:"الحكمة العملية", author:"الشهيد مرتضى مطهري", category:"المنطق والفلسفة", read:"https://www.imamkadhim.com/?s=الحكمة+العملية" },
+{ title:"الصراع بين الحق والباطل", author:"مؤلف متنوع", category:"رد الشبهات", read:"https://www.imamkadhim.com/?s=الصراع+بين+الحق+والباطل" },
+{ title:"عدالة الصحابة في الميزان", author:"مؤلف متنوع", category:"رد الشبهات", read:"https://www.imamkadhim.com/?s=عدالة+الصحابة" },
+{ title:"الإمامة الكبرى والخلافة العظمى", author:"مؤلف متنوع", category:"العقائد", read:"https://www.imamkadhim.com/?s=الإمامة+الكبرى" },
+{ title:"ثمرة الأبحاث العقائدية", author:"مؤلف متنوع", category:"العقائد", read:"https://www.imamkadhim.com/?s=ثمرة+الأبحاث+العقائدية" },
+{ title:"آلاء الرحمن في تفسير القرآن", author:"السيد قطب الدين الرواندي", category:"تفسير القرآن", read:"https://www.imamkadhim.com/?s=آلاء+الرحمن" },
+{ title:"مهذب الأحكام في بيان الحلال والحرام", author:"السيد عبد الأعلى الموسوي السبزواري", category:"الفقه", read:"https://www.imamkadhim.com/?s=مهذب+الأحكام" },
+{ title:"مجمع البحرين في مناقب السبطين عليهما السلام", author:"السيد ولي بن نعمة الله الحسيني الرضوي الحائري", category:"أهل البيت", read:"https://www.imamkadhim.com/?s=مجمع+البحرين" },
+{ title:"ف
